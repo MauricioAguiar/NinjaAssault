@@ -1,2 +1,4 @@
 # NinjaAssault
-My Firsts Steps on to my own game maker career
+My First Steps on to my own game maker career
+
+I hope it's exciting
