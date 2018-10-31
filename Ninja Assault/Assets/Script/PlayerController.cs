@@ -4,18 +4,42 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
+
+    public static PlayerController instance;
+
+    [SerializeField]
+    GameObject GhostEffect;
+
     public Animator animator;
 
     public float xtraSpeed = 4f;
 
     public GameObject crossHair, weapon;
 
+    public SpriteRenderer playerSprite;
+
     public Rigidbody2D playerRigidBody;
 
+    void toInstance() {
+        //Check if instance already exists
+        if (instance == null)
 
-    private void Awake()
-    {
+            //if not, set instance to this
+            instance = this;
+
+        //If instance already exists and it's not this:
+        else if (instance != this)
+
+            //Then destroy this. This enforces our singleton pattern, meaning there can only ever be one instance of a GameManager.
+            Destroy(gameObject);
+    }
+
+    private void Awake(){
+
+        toInstance();
+
         playerRigidBody = GetComponent<Rigidbody2D>();
+        playerSprite = GetComponent<SpriteRenderer>();
     }
     // Use this for initialization
     void Start(){
@@ -24,7 +48,6 @@ public class PlayerController : MonoBehaviour {
 
     // Update is called once per frame
     void FixedUpdate(){
-
 
         AimAndShoot();
 
@@ -45,6 +68,15 @@ public class PlayerController : MonoBehaviour {
 
         playerRigidBody.velocity = (vec * Time.deltaTime * velo);
         MovAnimator(vec);
+
+        if (Input.GetButtonDown("Dash")){
+
+           // playerRigidBody.AddForce
+            playerRigidBody.AddRelativeForce(vec * Time.deltaTime);
+            GameObject GhostBody = Instantiate(GhostEffect, transform.position, transform.rotation);
+
+        }
+
     }
 
 

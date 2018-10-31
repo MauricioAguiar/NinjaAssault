@@ -273,6 +273,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1842668973406974, guid: a58d07fe05f1da549b548a0b37d2945b, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a58d07fe05f1da549b548a0b37d2945b, type: 2}
   m_IsPrefabAsset: 0
@@ -389,7 +393,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &515535278
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11360,10 +11364,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a8b0b405fe4d1c4d9366da9f5ace273, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GhostEffect: {fileID: 1680169866770522, guid: 3daa2bcc5e5fca742ac553f5934feae7,
+    type: 2}
   animator: {fileID: 1600899135}
   xtraSpeed: 4
   crossHair: {fileID: 203976418}
   weapon: {fileID: 1162679678218274, guid: 40570993b2bdb00438d56babad40f35f, type: 2}
+  playerSprite: {fileID: 0}
   playerRigidBody: {fileID: 1600899137}
 --- !u!212 &1600899133
 SpriteRenderer:
@@ -11399,7 +11406,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 6f3a67c8d8c52c846be9030caf8d1574, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
