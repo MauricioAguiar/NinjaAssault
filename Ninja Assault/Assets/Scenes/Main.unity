@@ -277,6 +277,10 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1842668973406974, guid: a58d07fe05f1da549b548a0b37d2945b, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a58d07fe05f1da549b548a0b37d2945b, type: 2}
   m_IsPrefabAsset: 0
@@ -387,7 +391,7 @@ GameObject:
   - component: {fileID: 515535279}
   - component: {fileID: 515535278}
   - component: {fileID: 515535282}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -860,7 +864,7 @@ GameObject:
   - component: {fileID: 999403166}
   - component: {fileID: 999403165}
   - component: {fileID: 999403164}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11367,7 +11371,7 @@ MonoBehaviour:
   dashMaxDistance: 0
   dashSpeed: 0
   dashInTime: 0
-  dashCooldown: 2
+  dashCooldown: 0.97
   vec: {x: 0, y: 0}
   ghostEffect: {fileID: 1680169866770522, guid: 3daa2bcc5e5fca742ac553f5934feae7,
     type: 2}

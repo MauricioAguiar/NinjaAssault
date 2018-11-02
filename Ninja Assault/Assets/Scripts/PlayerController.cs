@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour {
     private void Awake(){
 
         dashCooldown = 0;
-        dashMaxDistance = 150;
+        dashMaxDistance = 4;
 
         ObstacleLayer = LayerMask.GetMask("Walls");
 
@@ -94,7 +94,7 @@ public class PlayerController : MonoBehaviour {
     
     // Apply Force on especific direction
     void ApplyForce(){
-        Instantiate(ghostEffect, transform.position, transform.rotation);
+        
         float x = Input.GetAxis("Horizontal");
 
         float y = Input.GetAxis("Vertical");
@@ -117,19 +117,26 @@ public class PlayerController : MonoBehaviour {
     void Dash()
     {
 
-        Debug.DrawLine(transform.position, transform.position.normalized * 3, Color.blue);
+       // Vector2 shiftShity = new Vector2(transform.position.x + vec.normalized.x * 4, transform.position.y + vec.normalized.y * 4)
+         Vector2 shiftShity = new Vector2(transform.position.x + transform.position.normalized.x + 4, transform.position.y);
+        Debug.DrawLine(transform.position, shiftShity, Color.blue);
 
         if (Input.GetButtonDown("Dash"))
         {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position,vec.normalized*dashMaxDistance, dashMaxDistance, ObstacleLayer);
+            RaycastHit2D hit = Physics2D.Raycast(transform.position,vec, dashMaxDistance, ObstacleLayer);
+
 
             float dashPrecise = dashMaxDistance;
+
 
             Vector2 dashPointer = vec;            
 
             if (hit)
             {
-                dashPrecise -= hit.fraction; 
+                Debug.Log("Dash Batendo na parede");
+                dashPrecise -= hit.fraction;
+                Debug.Log("DashPrecise: " + dashPrecise);
+                Debug.Log("hitFraction:" + hit.fraction);
             }
 
             if (dashInTime <= 0){
@@ -140,6 +147,7 @@ public class PlayerController : MonoBehaviour {
                 Instantiate(ghostEffect, transform.position, transform.rotation);
 
                 dashInTime = dashCooldown;
+
             }
 
         }else{

@@ -19,6 +19,7 @@ public class GhostEffect : MonoBehaviour {
 
         sprite.sprite = PlayerController.instance.playerSprite.sprite;
         sprite.color = new Vector4(0, 50, 50, 0.1f);
+
     }
 
     // Update is called once per frame
