@@ -1,12 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using System.Collections;
 
 public class PlayerController : MonoBehaviour {
 
     public float dashMaxDistance;
 
-    public float dashSpeed;
+    private Vector2 dashDirection;
 
     public float dashInTime;
 
@@ -14,7 +13,7 @@ public class PlayerController : MonoBehaviour {
 
     private Collider2D coll;
 
-    public Vector2 vec = new Vector2(0,0);
+    private Vector2 vec = new Vector2(0,0);
 
     public static PlayerController instance;
 
@@ -23,13 +22,15 @@ public class PlayerController : MonoBehaviour {
 
     public Animator animator;
 
-    public float xtraSpeed = 4f;
+    public float ExtraSpeed = 4f;
 
     public GameObject crossHair, weapon;
 
     public SpriteRenderer playerSprite;
 
     public Rigidbody2D playerRigidBody;
+
+    public int temporaryStreght;
 
     public LayerMask ObstacleLayer;
 
@@ -59,12 +60,12 @@ public class PlayerController : MonoBehaviour {
 
     private void Awake(){
 
-        dashCooldown = 0;
+        dashCooldown = 0.5f;
         dashMaxDistance = 4;
 
         ObstacleLayer = LayerMask.GetMask("Walls");
 
-        velo = (1 + xtraSpeed / 10) * 300;
+        velo = (1 + ExtraSpeed / 10) * 300;
 
         ToInstance();
 
@@ -103,7 +104,9 @@ public class PlayerController : MonoBehaviour {
 
         playerRigidBody.velocity = (vec * Time.deltaTime * velo);
 
-        if (vec.magnitude> 0) {
+        if (vec.magnitude !=0) {
+
+            dashDirection = vec.normalized;
 
             IsMoving = true;
 
@@ -114,46 +117,49 @@ public class PlayerController : MonoBehaviour {
 
     }
 
-    void Dash()
-    {
+    void Dash(){
 
-       // Vector2 shiftShity = new Vector2(transform.position.x + vec.normalized.x * 4, transform.position.y + vec.normalized.y * 4)
-         Vector2 shiftShity = new Vector2(transform.position.x + transform.position.normalized.x + 4, transform.position.y);
-        Debug.DrawLine(transform.position, shiftShity, Color.blue);
+        // Vector2 shiftShity = new Vector2(transform.position.x + vec.normalized.x * 4, transform.position.y + vec.normalized.y * 4)
+        float futureX  = dashDirection.x * dashMaxDistance;
+        float futureY = dashDirection.y * dashMaxDistance;
 
-        if (Input.GetButtonDown("Dash"))
-        {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position,vec, dashMaxDistance, ObstacleLayer);
+        Vector2 shiftShity = new Vector2(futureX+transform.position.x, futureY+transform.position.y);
 
 
-            float dashPrecise = dashMaxDistance;
+        Debug.DrawLine(transform.position, shiftShity, Color.yellow);
+
+        RaycastHit2D hit = Physics2D.Raycast(transform.position,dashDirection, dashMaxDistance, ObstacleLayer);
+        float dashPrecise = 1;
+
+        if (Input.GetButtonDown("Dash")){
 
 
-            Vector2 dashPointer = vec;            
+        
+            if (hit){
 
-            if (hit)
-            {
                 Debug.Log("Dash Batendo na parede");
-                dashPrecise -= hit.fraction;
-                Debug.Log("DashPrecise: " + dashPrecise);
+                dashPrecise = hit.fraction;
+
+                Debug.Log("Before"+dashPrecise);
                 Debug.Log("hitFraction:" + hit.fraction);
             }
 
             if (dashInTime <= 0){
 
-                Debug.Log("Dashing");
-
-                playerRigidBody.AddForce(vec.normalized * dashPrecise, ForceMode2D.Impulse);
+                playerRigidBody.velocity  = (dashDirection *(dashPrecise * dashMaxDistance* 50));
                 Instantiate(ghostEffect, transform.position, transform.rotation);
 
-                dashInTime = dashCooldown;
 
+                dashInTime = dashCooldown;
+                Debug.Log("After"+dashPrecise);
             }
 
         }else{
-
+            if (dashInTime < 0){ 
+                dashInTime = 0;
+            }
             dashInTime -= Time.deltaTime;
-            Debug.Log("NotDashing");
+
         }
     }
    
@@ -182,8 +188,6 @@ public class PlayerController : MonoBehaviour {
             if (Input.GetButtonDown("Fire1")){
 
                 GameObject bullet = Instantiate(weapon, transform.position, Quaternion.identity);
-
-                Vector3 angle = aim;
 
                 bullet.GetComponent<Rigidbody2D>().velocity = shootingDirection*10;
                 bullet.transform.Rotate(0.0f, 0.0f, Mathf.Atan2 (shootingDirection.y,shootingDirection.x)* Mathf.Rad2Deg);
