@@ -7,9 +7,11 @@ public class PlayerController : MonoBehaviour {
 
     private Vector2 dashDirection;
 
-    public float dashInTime;
+    private float dashInTime;
 
     public float dashCooldown;
+
+    public float ExtraSpeed = 4f;
 
     private Collider2D coll;
 
@@ -22,7 +24,6 @@ public class PlayerController : MonoBehaviour {
 
     public Animator animator;
 
-    public float ExtraSpeed = 4f;
 
     public GameObject crossHair, weapon;
 
@@ -30,9 +31,7 @@ public class PlayerController : MonoBehaviour {
 
     public Rigidbody2D playerRigidBody;
 
-    public int temporaryStreght;
-
-    public LayerMask ObstacleLayer;
+    public LayerMask obstacleLayer;
 
     float velo;
 
@@ -44,6 +43,7 @@ public class PlayerController : MonoBehaviour {
         return true;
     }
 
+    //Instance method [Singleton]
     void ToInstance() {
         //Check if instance already exists
         if (instance == null)
@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour {
         dashCooldown = 0.5f;
         dashMaxDistance = 4;
 
-        ObstacleLayer = LayerMask.GetMask("Walls");
+        obstacleLayer = LayerMask.GetMask("Walls");
 
         velo = (1 + ExtraSpeed / 10) * 300;
 
@@ -79,7 +79,6 @@ public class PlayerController : MonoBehaviour {
     void Start(){
         
     }
-
    
     // Update is called once per frame
     void FixedUpdate(){
@@ -117,6 +116,7 @@ public class PlayerController : MonoBehaviour {
 
     }
 
+    // Dash function using Rigidbody to add velocity to the target
     void Dash(){
 
         // Vector2 shiftShity = new Vector2(transform.position.x + vec.normalized.x * 4, transform.position.y + vec.normalized.y * 4)
@@ -128,20 +128,14 @@ public class PlayerController : MonoBehaviour {
 
         Debug.DrawLine(transform.position, shiftShity, Color.yellow);
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position,dashDirection, dashMaxDistance, ObstacleLayer);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position,dashDirection, dashMaxDistance, obstacleLayer);
         float dashPrecise = 1;
 
         if (Input.GetButtonDown("Dash")){
-
-
         
             if (hit){
 
-                Debug.Log("Dash Batendo na parede");
                 dashPrecise = hit.fraction;
-
-                Debug.Log("Before"+dashPrecise);
-                Debug.Log("hitFraction:" + hit.fraction);
             }
 
             if (dashInTime <= 0){
@@ -149,9 +143,7 @@ public class PlayerController : MonoBehaviour {
                 playerRigidBody.velocity  = (dashDirection *(dashPrecise * dashMaxDistance* 50));
                 Instantiate(ghostEffect, transform.position, transform.rotation);
 
-
                 dashInTime = dashCooldown;
-                Debug.Log("After"+dashPrecise);
             }
 
         }else{
@@ -198,4 +190,6 @@ public class PlayerController : MonoBehaviour {
             crossHair.SetActive(false);
         }
     }
+
+
 }
