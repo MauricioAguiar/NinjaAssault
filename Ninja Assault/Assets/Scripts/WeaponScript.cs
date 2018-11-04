@@ -1,9 +1,5 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
-using UnityEngine;
-using System.Collections;
 
 public class WeaponScript : MonoBehaviour
 {
@@ -16,9 +12,6 @@ public class WeaponScript : MonoBehaviour
     private bool moving = false;
     private Vector3 initialPosition, movePosition;
     private float angleInDegrees = 0;
-
-
-
 
     void Start()
     {
