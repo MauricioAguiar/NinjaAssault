@@ -38,7 +38,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.625
+        time: 0.5
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -66,7 +66,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.625
+        time: 0.5
         value: 10
         inSlope: Infinity
         outSlope: Infinity
@@ -81,10 +81,38 @@ AnimationClip:
     path: 
     classID: 212
     script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.25
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.5
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: Doorlight
+    classID: 108
+    script: {fileID: 0}
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: 707ea12b2e15b6b40a49ccaf417ec79e, type: 3}
+      value: {fileID: 21300006, guid: 707ea12b2e15b6b40a49ccaf417ec79e, type: 3}
     - time: 0.125
       value: {fileID: 21300008, guid: 707ea12b2e15b6b40a49ccaf417ec79e, type: 3}
     - time: 0.25
@@ -119,6 +147,13 @@ AnimationClip:
       customType: 26
       isPPtrCurve: 0
     - serializedVersion: 2
+      path: 4203794334
+      attribute: 3305885265
+      script: {fileID: 0}
+      typeID: 108
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
       path: 0
       attribute: 0
       script: {fileID: 0}
@@ -126,7 +161,7 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 707ea12b2e15b6b40a49ccaf417ec79e, type: 3}
+    - {fileID: 21300006, guid: 707ea12b2e15b6b40a49ccaf417ec79e, type: 3}
     - {fileID: 21300008, guid: 707ea12b2e15b6b40a49ccaf417ec79e, type: 3}
     - {fileID: 21300010, guid: 707ea12b2e15b6b40a49ccaf417ec79e, type: 3}
     - {fileID: 21300012, guid: 707ea12b2e15b6b40a49ccaf417ec79e, type: 3}
@@ -174,7 +209,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.625
+        time: 0.5
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -202,7 +237,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.625
+        time: 0.5
         value: 10
         inSlope: Infinity
         outSlope: Infinity
@@ -216,6 +251,34 @@ AnimationClip:
     attribute: m_SortingOrder
     path: 
     classID: 212
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.25
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.5
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Enabled
+    path: Doorlight
+    classID: 108
     script: {fileID: 0}
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
