@@ -405,6 +405,48 @@ Transform:
   m_Father: {fileID: 1600899134}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &525259379
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4388288293366456, guid: 40570993b2bdb00438d56babad40f35f, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 1.728
+      objectReference: {fileID: 0}
+    - target: {fileID: 4388288293366456, guid: 40570993b2bdb00438d56babad40f35f, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.692
+      objectReference: {fileID: 0}
+    - target: {fileID: 4388288293366456, guid: 40570993b2bdb00438d56babad40f35f, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 4388288293366456, guid: 40570993b2bdb00438d56babad40f35f, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4388288293366456, guid: 40570993b2bdb00438d56babad40f35f, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4388288293366456, guid: 40570993b2bdb00438d56babad40f35f, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4388288293366456, guid: 40570993b2bdb00438d56babad40f35f, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4388288293366456, guid: 40570993b2bdb00438d56babad40f35f, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 40570993b2bdb00438d56babad40f35f, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1001 &530802359
 Prefab:
   m_ObjectHideFlags: 0
@@ -448,12 +490,12 @@ Prefab:
         type: 2}
       propertyPath: col
       value: 
-      objectReference: {fileID: 1334690837}
+      objectReference: {fileID: 0}
     - target: {fileID: 114358948405985838, guid: f7e97d763516f474d837a86b48b9653e,
         type: 2}
       propertyPath: animator
       value: 
-      objectReference: {fileID: 1334690841}
+      objectReference: {fileID: 0}
     - target: {fileID: 114358948405985838, guid: f7e97d763516f474d837a86b48b9653e,
         type: 2}
       propertyPath: lockedDoor
@@ -469,6 +511,14 @@ Prefab:
       propertyPath: openDoor
       value: 
       objectReference: {fileID: 8300000, guid: db2b7d9a365188f4dbcba2c63d2fda49, type: 3}
+    - target: {fileID: 4772401618826332, guid: f7e97d763516f474d837a86b48b9653e, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1437372441978196, guid: f7e97d763516f474d837a86b48b9653e, type: 2}
+      propertyPath: m_TagString
+      value: Walls
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7e97d763516f474d837a86b48b9653e, type: 2}
   m_IsPrefabAsset: 0
@@ -597,7 +647,7 @@ GameObject:
   - component: {fileID: 999403164}
   m_Layer: 8
   m_Name: Walls
-  m_TagString: Untagged
+  m_TagString: Walls
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1627,16 +1677,6 @@ Transform:
   m_Father: {fileID: 1752538836}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &1334690837 stripped
-PolygonCollider2D:
-  m_CorrespondingSourceObject: {fileID: 60021344887318570, guid: f7e97d763516f474d837a86b48b9653e,
-    type: 2}
-  m_PrefabInternal: {fileID: 530802359}
---- !u!95 &1334690841 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 95805025180481292, guid: f7e97d763516f474d837a86b48b9653e,
-    type: 2}
-  m_PrefabInternal: {fileID: 530802359}
 --- !u!1001 &1335375558
 Prefab:
   m_ObjectHideFlags: 0
@@ -1692,7 +1732,7 @@ GameObject:
   - component: {fileID: 1351857526}
   m_Layer: 8
   m_Name: WallsSides
-  m_TagString: Untagged
+  m_TagString: Walls
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11420,7 +11460,7 @@ MonoBehaviour:
     type: 2}
   animator: {fileID: 1600899135}
   crossHair: {fileID: 203976418}
-  weapon: {fileID: 1162679678218274, guid: 40570993b2bdb00438d56babad40f35f, type: 2}
+  weapon: {fileID: 1338772551515420, guid: 40570993b2bdb00438d56babad40f35f, type: 2}
   playerSprite: {fileID: 0}
   playerRigidBody: {fileID: 1600899137}
   obstacleLayer:
@@ -11488,7 +11528,7 @@ Transform:
   - {fileID: 1669612308}
   - {fileID: 203976420}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1600899135
 Animator:

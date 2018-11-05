@@ -173,7 +173,7 @@ public class PlayerController : MonoBehaviour {
         if (aim.magnitude > 0.0f){
             aim.Normalize();
 
-            crossHair.transform.localPosition = aim*0.4f;
+            crossHair.transform.localPosition = aim;
             crossHair.SetActive(true);
 
             shootingDirection.Normalize();
@@ -183,7 +183,7 @@ public class PlayerController : MonoBehaviour {
 
                 bullet.GetComponent<Rigidbody2D>().velocity = shootingDirection*10;
                 bullet.transform.Rotate(0.0f, 0.0f, Mathf.Atan2 (shootingDirection.y,shootingDirection.x)* Mathf.Rad2Deg);
-                Destroy(bullet, 2.0f);
+               
             }
         }
         else{
