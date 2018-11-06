@@ -16,7 +16,6 @@ public class BulletScript : MonoBehaviour{
             Debug.Log("And Here");
             SpriteRenderer s = gameObject.GetComponent<SpriteRenderer>();
             Rigidbody2D r = gameObject.GetComponent<Rigidbody2D>();
-            EdgeCollider2D b = gameObject.GetComponent<EdgeCollider2D>();
 
             s.color = c;
 

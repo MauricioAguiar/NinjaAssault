@@ -183,7 +183,8 @@ public class PlayerController : MonoBehaviour {
 
                 bullet.GetComponent<Rigidbody2D>().velocity = shootingDirection*10;
                 bullet.transform.Rotate(0.0f, 0.0f, Mathf.Atan2 (shootingDirection.y,shootingDirection.x)* Mathf.Rad2Deg);
-               
+
+                Destroy(bullet, 5);
             }
         }
         else{
