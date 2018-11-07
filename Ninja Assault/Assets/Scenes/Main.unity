@@ -11815,8 +11815,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
+  rb: {fileID: 1795579428}
   ani: {fileID: 1795579429}
+  statusEnemy: 
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 0
   atualPosition: {x: 0, y: 0}
+  prevPosition: {x: 0, y: 0}
 --- !u!1 &1804617714
 GameObject:
   m_ObjectHideFlags: 0

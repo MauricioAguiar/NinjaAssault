@@ -126,9 +126,10 @@ public class PlayerController : MonoBehaviour {
         Vector2 shiftShity = new Vector2(futureX+transform.position.x, futureY+transform.position.y);
 
 
-        Debug.DrawLine(transform.position, shiftShity, Color.yellow);
+        Debug.DrawLine(transform.position, shiftShity, Color.cyan);
 
         RaycastHit2D hit = Physics2D.Raycast(transform.position,dashDirection, dashMaxDistance, obstacleLayer);
+
         float dashPrecise = 1;
 
         if (Input.GetButtonDown("Dash")){
