@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 60071598842115332}
   m_Layer: 8
   m_Name: Door Back
-  m_TagString: Untagged
+  m_TagString: Walls
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,17 +99,17 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.5, y: 1}
-      - {x: -0.5, y: 1}
+    - - {x: 0.5, y: 0.7}
+      - {x: -0.5, y: 0.7}
       - {x: -0.5, y: 0.5}
-      - {x: -1, y: 0.5}
-      - {x: -1, y: -0.5}
+      - {x: -0.7, y: 0.5}
+      - {x: -0.7, y: -0.5}
       - {x: -0.5, y: -0.5}
-      - {x: -0.5, y: -1}
-      - {x: 0.5, y: -1}
+      - {x: -0.5, y: -0.7}
+      - {x: 0.5, y: -0.7}
       - {x: 0.5, y: -0.5}
-      - {x: 1, y: -0.5}
-      - {x: 1, y: 0.5}
+      - {x: 0.7, y: -0.5}
+      - {x: 0.7, y: 0.5}
       - {x: 0.5, y: 0.5}
 --- !u!61 &61655348642818492
 BoxCollider2D:

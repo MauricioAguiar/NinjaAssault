@@ -119,12 +119,10 @@ public class PlayerController : MonoBehaviour {
     // Dash function using Rigidbody to add velocity to the target
     void Dash(){
 
-        // Vector2 shiftShity = new Vector2(transform.position.x + vec.normalized.x * 4, transform.position.y + vec.normalized.y * 4)
         float futureX  = dashDirection.x * dashMaxDistance;
         float futureY = dashDirection.y * dashMaxDistance;
 
         Vector2 shiftShity = new Vector2(futureX+transform.position.x, futureY+transform.position.y);
-
 
         Debug.DrawLine(transform.position, shiftShity, Color.cyan);
 
@@ -152,7 +150,6 @@ public class PlayerController : MonoBehaviour {
                 dashInTime = 0;
             }
             dashInTime -= Time.deltaTime;
-
         }
     }
    
