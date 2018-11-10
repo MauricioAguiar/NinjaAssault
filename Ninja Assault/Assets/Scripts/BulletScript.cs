@@ -13,7 +13,6 @@ public class BulletScript : MonoBehaviour{
 
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.tag == "Walls") {
-            Debug.Log("And Here");
             SpriteRenderer s = gameObject.GetComponent<SpriteRenderer>();
             Rigidbody2D r = gameObject.GetComponent<Rigidbody2D>();
 

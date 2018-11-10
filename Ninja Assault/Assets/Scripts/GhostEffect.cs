@@ -8,6 +8,8 @@ public class GhostEffect : MonoBehaviour {
 
     float timer = 0.5f;
 
+    public Color ghostColor;
+
     private void Start(){
 
         sprite = GetComponent<SpriteRenderer>();
@@ -17,7 +19,7 @@ public class GhostEffect : MonoBehaviour {
         transform.localScale = PlayerController.instance.transform.localScale;
 
         sprite.sprite = PlayerController.instance.playerSprite.sprite;
-        sprite.color = new Vector4(0, 50, 50, 0.1f);
+        sprite.color = ghostColor;
 
     }
 

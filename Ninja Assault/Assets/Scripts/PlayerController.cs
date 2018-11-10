@@ -9,21 +9,16 @@ public class PlayerController : MonoBehaviour {
 
     private float dashInTime;
 
-    public float dashCooldown;
+    public float dashCooldown, ExtraSpeed;
 
-    public float ExtraSpeed = 4f;
-
-    private Collider2D coll;
-
-    private Vector2 vec = new Vector2(0,0);
+    private Vector2 vec;
 
     public static PlayerController instance;
 
     [SerializeField]
-    GameObject ghostEffect;
+    private GameObject ghostEffect;
 
     public Animator animator;
-
 
     public GameObject crossHair, weapon;
 
@@ -60,17 +55,16 @@ public class PlayerController : MonoBehaviour {
 
     private void Awake(){
 
+        ExtraSpeed = 4f;
         dashCooldown = 0.5f;
         dashMaxDistance = 4;
-
+        vec = new Vector2(0, 0);
         obstacleLayer = LayerMask.GetMask("Walls");
-
         velo = (1 + ExtraSpeed / 10) * 300;
-
-        ToInstance();
-
         playerRigidBody = GetComponent<Rigidbody2D>();
         playerSprite = GetComponent<SpriteRenderer>();
+
+        ToInstance();
 
         Dash();
     }
@@ -88,8 +82,6 @@ public class PlayerController : MonoBehaviour {
         ApplyForce();
 
         Dash();
-        
-
     }
     
     // Apply Force on especific direction

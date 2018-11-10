@@ -8,6 +8,7 @@ TagManager:
   - Walls
   - Enemy
   - Floor
+  - Weapon
   layers:
   - Default
   - TransparentFX

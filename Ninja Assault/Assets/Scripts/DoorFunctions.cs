@@ -15,19 +15,18 @@ public class DoorFunctions :MonoBehaviour {
     bool alreadyPlayed;
 
     // Use this for initialization
-    void Start() {
+    void Awake() {
 
         alreadyPlayed = false;
         col = GetComponent<PolygonCollider2D>();
         aS = GetComponent<AudioSource>();
-
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
-    void Update() {
+    void FixedUpdate() {
 
-        OnTriggerEnter2D(col);
-        OnTriggerExit2D(col);
+        GetEnemyStatus();
     }
 
     void PlayLocked() {
@@ -35,6 +34,13 @@ public class DoorFunctions :MonoBehaviour {
             aS.PlayOneShot(lockedDoor, 0.5f);
             alreadyPlayed = true;
         }
+    }
+
+    void GetEnemyStatus() {
+        if (GameManager.instance.HasEnemyLeft())
+            animator.SetBool("hasEnemy", true);
+        else
+            animator.SetBool("hasEnemy", false);
     }
 
     void PlayClosing() {
