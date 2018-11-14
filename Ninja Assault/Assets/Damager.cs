@@ -13,6 +13,6 @@ public class Damager :MonoBehaviour {
     
 
     private void OnCollisionEnter2D(Collision2D collision) {
-       collision.gameObject.GetComponent<HealthSystem>().
+        collision.gameObject.GetComponent<HealthSystem>();
     }
 }
