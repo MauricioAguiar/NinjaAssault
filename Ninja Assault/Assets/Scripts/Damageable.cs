@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Playables;
 
 // A behaviour father to be implemented to differents Objects
@@ -9,14 +10,21 @@ public class Damageable :MonoBehaviour {
 
     public float health, maxHealth, percentAdded, invunerableTime;
 
+    public Slider healthBar;
+
     private float damageOverTime, timeDmgOverTime;
 
     private bool isInvunerable;
 
-    private void Awake() {
+    private void Start() {
         invunerableTime = 1;
         isInvunerable = false;
         health = maxHealth;
+        healthBar.value = CalculateHealth();
+    }
+
+    private float CalculateHealth() {
+        return (health / maxHealth);
     }
 
     private void Update() {
@@ -27,6 +35,7 @@ public class Damageable :MonoBehaviour {
         if (!isInvunerable) {
             health -= dmg;
             OnRecieveDamage();
+            healthBar.value = CalculateHealth(); 
         }
         GainInvunerability(invunerableTime);
     }
@@ -53,6 +62,7 @@ public class Damageable :MonoBehaviour {
     void Heal(float moreHealth) {
         health += moreHealth;
         LifeCaped();
+        healthBar.value = CalculateHealth();
     }
 
     void LifeCaped() {
@@ -75,6 +85,7 @@ public class Damageable :MonoBehaviour {
         OnRecieveDamage();
         health -= damageOverTime;
         timeDmgOverTime -= Time.deltaTime;
+        healthBar.value = CalculateHealth();
     }
 
     void GainInvunerability(float time) {
@@ -90,7 +101,7 @@ public class Damageable :MonoBehaviour {
     }
 
     void OnDeath() {
-        Destroy(gameObject);
+        Debug.Log("Murri");
     }
 
 }

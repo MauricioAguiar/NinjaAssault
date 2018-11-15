@@ -223,7 +223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 30
-  damageOverTime: 1
+  damageOverTime: 3
   timeDuration: 10
   layerToHit:
     serializedVersion: 2

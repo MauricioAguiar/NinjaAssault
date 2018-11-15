@@ -10,8 +10,10 @@ public class Damager :MonoBehaviour {
 
     public LayerMask layerToHit;
 
-    private void Start() {
+    private float timerCd;
 
+    private void Start() {
+        timerCd = 2;
 
     }
 
@@ -24,5 +26,17 @@ public class Damager :MonoBehaviour {
             if(damageOverTime > 0)
                 collision.gameObject.GetComponent<Damageable>().ReceiveDamageOverTime(damageOverTime, timeDuration);
         }
+    }
+
+    private void OnCollisionStay2D(Collision2D collision) {
+        
+        if (((1 << collision.gameObject.layer) & layerToHit) != 0 & timerCd <= 0 ) {
+            collision.gameObject.GetComponent<Damageable>().ReceiveDamage(damage);
+            timerCd = 1.5f;
+
+            if (damageOverTime > 0)
+                collision.gameObject.GetComponent<Damageable>().ReceiveDamageOverTime(damageOverTime, timeDuration);
+        }
+        timerCd -= Time.deltaTime;
     }
 }
