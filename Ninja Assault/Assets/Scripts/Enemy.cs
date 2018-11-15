@@ -13,13 +13,11 @@ public class Enemy :MonoBehaviour {
 
     public AudioClip confused1, confused2, confused3, following1, following2, following3, nhacNhac;
 
-    public int musicPriority;
-
-    public string statusEnemy;
-
     public LayerMask obstacleLayer, obLayer;
 
     public Vector2 atualPosition, prevPosition, dir;
+
+    private int musicPriority;
 
     private float followTime, replaySoundCD, replaySoundCDN;
 

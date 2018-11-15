@@ -3,20 +3,9 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour {
 
-    public float dashMaxDistance;
-
-    private Vector2 dashDirection;
-
-    private float dashInTime;
-
-    public float dashCooldown, ExtraSpeed;
-
-    private Vector2 vec;
-
     public static PlayerController instance;
 
-    [SerializeField]
-    private GameObject ghostEffect;
+    public float dashMaxDistance, dashCooldown, ExtraSpeed;
 
     public Animator animator;
 
@@ -28,11 +17,15 @@ public class PlayerController : MonoBehaviour {
 
     public LayerMask obstacleLayer;
 
-    float velo;
+    public bool isColliding, IsMoving;
 
-    public bool isColliding;
+    private Vector2 vec;
+    [SerializeField]
+    private GameObject ghostEffect;
 
-    public bool IsMoving;
+    private Vector2 dashDirection;
+
+    private float velo, dashInTime;
 
     public bool WillCollide(){
         return true;

@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 50968342825959766}
   - component: {fileID: 61754790514740210}
   - component: {fileID: 114936970080708594}
+  - component: {fileID: 114895882211552744}
   m_Layer: 0
   m_Name: SimpleKunai
   m_TagString: Untagged
@@ -210,6 +211,23 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!114 &114895882211552744
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1723527216578994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1957ffc70c3400c498da860e471d4786, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 30
+  damageOverTime: 1
+  timeDuration: 10
+  layerToHit:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!114 &114936970080708594
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -221,6 +239,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2bf7ba4e727d3144867ec4e32bcff84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  c: {r: 0, g: 0, b: 0, a: 0}
 --- !u!212 &212486383537250460
 SpriteRenderer:
   m_ObjectHideFlags: 1
