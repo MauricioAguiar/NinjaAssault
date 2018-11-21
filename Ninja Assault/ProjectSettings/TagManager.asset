@@ -9,6 +9,8 @@ TagManager:
   - Enemy
   - Floor
   - Weapon
+  - Projectil
+  - PlayerEffect
   layers:
   - Default
   - TransparentFX
@@ -23,7 +25,7 @@ TagManager:
   - Player
   - Ally
   - Floor
-  - 
+  - Projectil
   - 
   - 
   - 

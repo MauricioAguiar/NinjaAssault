@@ -193,6 +193,11 @@ public class Enemy :MonoBehaviour {
         if (collision.gameObject.tag == "Player") {
             PlayNhac();
         }
+        rB.velocity = new Vector2(0, 0);
+    }
+
+    private void OnCollisionStay2D(Collision2D collision) {
+        rB.velocity = new Vector2(0, 0);
     }
 
     private void PlayNhac() {

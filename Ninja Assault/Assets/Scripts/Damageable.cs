@@ -8,16 +8,22 @@ using UnityEngine.Playables;
 // A behaviour father to be implemented to differents Objects
 public class Damageable :MonoBehaviour {
 
+    public Color colorOnHit;
+
     public float health, maxHealth, percentAdded, invunerableTime;
+
+    public bool canDie;
 
     public Slider healthBar;
 
-    private float damageOverTime, timeDmgOverTime;
+    private float damageOverTime;
+
+    private int timeDmgOverTime;
 
     private bool isInvunerable;
 
     private void Start() {
-        invunerableTime = 1;
+        invunerableTime = 14;
         isInvunerable = false;
         health = maxHealth;
         healthBar.value = CalculateHealth();
@@ -35,15 +41,16 @@ public class Damageable :MonoBehaviour {
         if (!isInvunerable) {
             health -= dmg;
             OnRecieveDamage();
-            healthBar.value = CalculateHealth(); 
+            healthBar.value = CalculateHealth();
+            isInvunerable = true;
+            StartCoroutine(GainInvunerability(invunerableTime));
         }
-        GainInvunerability(invunerableTime);
     }
 
-    public void ReceiveDamageOverTime(float dmg, float dmgDuration) {
+    public void ReceiveDamageOverTime(float dmg, int dmgDuration) {
         damageOverTime = dmg;
         timeDmgOverTime = dmgDuration;
-        InvokeRepeating("ApplyDmg", 0.3f, dmgDuration);
+        InvokeRepeating("ApplyDmg", 1, dmgDuration);
     }
 
     void IncreaseHealth(float addHealth) {
@@ -84,15 +91,12 @@ public class Damageable :MonoBehaviour {
             CancelInvoke("ApplyDmg");
         OnRecieveDamage();
         health -= damageOverTime;
-        timeDmgOverTime -= Time.deltaTime;
+        timeDmgOverTime -= 1;
         healthBar.value = CalculateHealth();
     }
 
-    void GainInvunerability(float time) {
-        while (time > 0) {
-            isInvunerable = true;
-            time -= Time.deltaTime;
-        }
+    IEnumerator GainInvunerability(float time) {
+        yield return new WaitForSeconds(time);
         isInvunerable = false;
     }
 
@@ -101,6 +105,9 @@ public class Damageable :MonoBehaviour {
     }
 
     void OnDeath() {
+        if (canDie) {
+            Destroy(gameObject);
+        }
         Debug.Log("Murri");
     }
 

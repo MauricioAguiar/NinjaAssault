@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class GameAudio : MonoBehaviour {
 
-    public static GameAudio instance;
 
     public AudioSource aS;
 
     private int audioPriority;
 
-    public float delayPointer;
+    public float delayPointer, delayEnemy;
 
-    private float delayEnemy;
+    public static GameAudio instance;
 
     void ToInstance() {
         //Check if instance already exists

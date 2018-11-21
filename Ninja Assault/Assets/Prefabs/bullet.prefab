@@ -21,12 +21,11 @@ GameObject:
   - component: {fileID: 4388288293366456}
   - component: {fileID: 212446447713503730}
   - component: {fileID: 50866190190131054}
-  - component: {fileID: 61376483222895598}
   - component: {fileID: 96492767119019274}
-  - component: {fileID: 114985410285680318}
   - component: {fileID: 68038660639699062}
   - component: {fileID: 114082380400006774}
-  m_Layer: 0
+  - component: {fileID: 114796256046065636}
+  m_Layer: 13
   m_Name: bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1338772551515420}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.728, y: -0.692, z: -0.33}
+  m_LocalPosition: {x: -2.06, y: -0.27, z: -0.33}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -57,40 +56,15 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.0001
+  m_Mass: 0.05
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 61
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: ae938949d32f4524abc5b98fa4c411d0, type: 2}
   m_Interpolate: 2
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
---- !u!61 &61376483222895598
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1338772551515420}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.13971975, y: -0.001042664}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.0633757, y: 0.50325835}
-    oldSize: {x: 0.32, y: 0.32}
-    newSize: {x: 0.32, y: 0.32}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.32, y: 0.32}
-  m_EdgeRadius: 0
 --- !u!68 &68038660639699062
 EdgeCollider2D:
   m_ObjectHideFlags: 1
@@ -202,7 +176,7 @@ TrailRenderer:
     alignment: 0
     textureMode: 0
     generateLightingData: 0
-  m_MinVertexDistance: 0.1
+  m_MinVertexDistance: 0
   m_Autodestruct: 0
   m_Emitting: 1
 --- !u!114 &114082380400006774
@@ -216,13 +190,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1957ffc70c3400c498da860e471d4786, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 30
+  damage: 60
   damageOverTime: 5
-  timeDuration: 5
+  timeDuration: 0
   layerToHit:
     serializedVersion: 2
     m_Bits: 512
---- !u!114 &114985410285680318
+--- !u!114 &114796256046065636
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -230,13 +204,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1338772551515420}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2bf7ba4e727d3144867ec4e32bcff84, type: 3}
+  m_Script: {fileID: 11500000, guid: 9abd7dee9fc40f142bea23c3e9ca5061, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacleLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  c: {r: 0.3584906, g: 0.26886794, b: 0.26886794, a: 1}
+  colorOnHit: {r: 0.03773582, g: 0.03773582, b: 0.03773582, a: 0.6156863}
+  timeToDestroy: 0.2
+  canColor: 1
+  destroyOnHit: 1
 --- !u!212 &212446447713503730
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -271,7 +245,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 700
+  m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: b74de3ce5171f2d46bbafa2f79ec131f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
