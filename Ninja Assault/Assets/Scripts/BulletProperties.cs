@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class BulletProperties :MonoBehaviour {
     private const int V = 8;
     private SpriteRenderer sprite;
@@ -17,13 +18,15 @@ public class BulletProperties :MonoBehaviour {
     private bool firstTouch;
 
     // Use this for initialization
-    void Start() {
+    private void Start() {
         firstTouch = true;
         sprite = gameObject.GetComponent<SpriteRenderer>();
       //  originalColor = sprite.color;
         Physics2D.IgnoreLayerCollision(13, 9, false);
         Physics2D.IgnoreLayerCollision(13, 10, false);
     }
+
+
 
     public void SetColor() {
         if (canColor)

@@ -12,7 +12,7 @@ public class Damageable :MonoBehaviour {
 
     public float health, maxHealth, percentAdded, invunerableTime;
 
-    public bool canDie;
+    public bool canDie, isPlayer;
 
     public Slider healthBar;
 
@@ -23,7 +23,6 @@ public class Damageable :MonoBehaviour {
     private bool isInvunerable;
 
     private void Start() {
-        invunerableTime = 14;
         isInvunerable = false;
         health = maxHealth;
         healthBar.value = CalculateHealth();
@@ -39,9 +38,13 @@ public class Damageable :MonoBehaviour {
 
     public void ReceiveDamage(float dmg) {
         if (!isInvunerable) {
+
+            if(isPlayer){ CameraBehaviour.instance.DoShake(); }
+
             health -= dmg;
             OnRecieveDamage();
             healthBar.value = CalculateHealth();
+            
             isInvunerable = true;
             StartCoroutine(GainInvunerability(invunerableTime));
         }

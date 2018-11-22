@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using EZCameraShake;
 
 public class PlayerController :MonoBehaviour {
 
@@ -129,7 +130,7 @@ public class PlayerController :MonoBehaviour {
                 dashPrecise = hit.fraction;
             }
 
-            if (dashInTime <= 0) {
+            if (dashInTime <= 0) {                
 
                 effectPos.position = playerSprite.transform.position;
 
