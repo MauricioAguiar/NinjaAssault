@@ -56,12 +56,12 @@ public class Damageable :MonoBehaviour {
         InvokeRepeating("ApplyDmg", 1, dmgDuration);
     }
 
-    void IncreaseHealth(float addHealth) {
+    public void IncreaseHealth(float addHealth) {
         maxHealth += addHealth;
         Heal(addHealth);
     }
 
-    void IncreasePerCentHealth(float addHealthPerCent) {
+    public void IncreasePerCentHealth(float addHealthPerCent) {
         float percent = maxHealth * (addHealthPerCent / 100);
         percentAdded += percent;
 
@@ -69,7 +69,7 @@ public class Damageable :MonoBehaviour {
         Heal(percent);
     }
 
-    void Heal(float moreHealth) {
+    public void Heal(float moreHealth) {
         health += moreHealth;
         LifeCaped();
         healthBar.value = CalculateHealth();

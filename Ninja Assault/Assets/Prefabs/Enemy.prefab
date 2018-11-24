@@ -123,7 +123,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1291375883412444}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.75, y: 1.8610198, z: 0}
+  m_LocalPosition: {x: 5.7122946, y: 2.7697463, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 3.5693}
   m_Children:
   - {fileID: 224787218471945562}
@@ -233,10 +233,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 30
   damageOverTime: 0
+  lifeStealAmount: 300
   timeDuration: 0
+  hasLifeSteal: 1
   layerToHit:
     serializedVersion: 2
     m_Bits: 1024
+  gameObjectWithDamageable: {fileID: 1291375883412444}
 --- !u!114 &114398687208153994
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -288,6 +291,7 @@ MonoBehaviour:
   percentAdded: 0
   invunerableTime: 0
   canDie: 1
+  isPlayer: 0
   healthBar: {fileID: 114695634873381296}
 --- !u!114 &114551808843407424
 MonoBehaviour:
@@ -488,7 +492,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1816908175741336}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -19.262299}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 0.008959999, y: 0.008959999, z: 0.029849999}
   m_Children:
   - {fileID: 224630736747321562}
@@ -563,7 +567,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1365913979076790}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 0.28016698}
   m_Children:
   - {fileID: 224071753475651998}

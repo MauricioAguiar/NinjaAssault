@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using EZCameraShake;
 
 public class PlayerController :MonoBehaviour {
 
@@ -139,6 +138,7 @@ public class PlayerController :MonoBehaviour {
                 dashInTime = dashCooldown;
                 playerSprite.color = new Color(1f, 1f, 1f, 0f);
                 effectAnimator.SetBool("isDashing", true);
+                Physics2D.IgnoreLayerCollision(13, 9, true);
                 StartCoroutine(InvisibleEffect(0.6f));
             }
 
@@ -156,6 +156,7 @@ public class PlayerController :MonoBehaviour {
         yield return new WaitForSeconds(timeDuration);
         effectAnimator.SetBool("isDashing", false);
         playerSprite.color = new Color(1f, 1f, 1f, 1f);
+        Physics2D.IgnoreLayerCollision(13, 9, false);
     }
 
     // Update the animation on Player's atual direction
