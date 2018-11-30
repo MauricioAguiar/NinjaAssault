@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 61176437084869422}
   - component: {fileID: 114477908926039362}
   - component: {fileID: 114911118585276102}
+  - component: {fileID: 114083328426298670}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -137,7 +138,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.45}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -148,7 +149,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.45, y: 0.59}
+  m_Size: {x: 0.45, y: 0.6}
   m_EdgeRadius: 0
 --- !u!95 &95606844192509426
 Animator:
@@ -205,6 +206,26 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114083328426298670
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1820424418255510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b888ae2bad06b04f9bc733778aed3e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 30
+  damageOverTime: 20
+  lifeStealAmount: 10
+  health: 0
+  maxHealth: 0
+  percentAdded: 0
+  timeDuration: 0
+  hasLifeSteal: 1
+  damagerFromPlayer: 1
 --- !u!114 &114477908926039362
 MonoBehaviour:
   m_ObjectHideFlags: 1

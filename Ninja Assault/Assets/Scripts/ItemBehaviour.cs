@@ -26,18 +26,14 @@ public class ItemBehaviour : MonoBehaviour {
 
     private void PowerEffect(Collider2D collision) {
 
-
         Instantiate(EspecialEffect, transform.position, transform.rotation);
 
-        collision.gameObject.GetComponent<PlayerController>().ExtraSpeed += addSpeed;
+        collision.gameObject.GetComponent<PlayerController>().SetVelocity(addSpeed);
 
         Damageable dmgProp = collision.gameObject.GetComponent<Damageable>();
 
         dmgProp.IncreaseHealth(addHealth);
         dmgProp.IncreasePerCentHealth(addHealthPercent);
-
-
-
 
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour {
 
-    public float damage, damageOverTime, lifeStealAmount, health, maxHealth, percentAdded;
+    public float damage, damageOverTime, lifeStealAmount, health, maxHealth, percentAdded, playerSpeed;
 
     public int timeDuration;
 

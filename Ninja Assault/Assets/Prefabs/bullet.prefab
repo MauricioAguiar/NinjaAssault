@@ -22,9 +22,9 @@ GameObject:
   - component: {fileID: 212723596757605426}
   - component: {fileID: 50879901376452006}
   - component: {fileID: 96011499218716248}
-  - component: {fileID: 68243749627252032}
   - component: {fileID: 114924690713779064}
   - component: {fileID: 114802274516736708}
+  - component: {fileID: 70390935562859686}
   m_Layer: 13
   m_Name: bullet
   m_TagString: Untagged
@@ -39,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1395405126525322}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.06, y: -0.27, z: -0.33}
+  m_LocalPosition: {x: 0.59765697, y: -2.391839, z: -0.33}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -65,8 +65,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!68 &68243749627252032
-EdgeCollider2D:
+--- !u!70 &70390935562859686
+CapsuleCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -77,16 +77,9 @@ EdgeCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: 0.10659107, y: -0.051124536}
-  - {x: 0.18951313, y: -0.050553244}
-  - {x: 0.24645624, y: -0.03248338}
-  - {x: 0.29473615, y: 0.00094374025}
-  - {x: 0.24821417, y: 0.028661132}
-  - {x: 0.18630466, y: 0.049511712}
-  - {x: 0.10892677, y: 0.049196523}
+  m_Offset: {x: 0.13545182, y: -0.000772706}
+  m_Size: {x: 0.31067207, y: 0.10014521}
+  m_Direction: 1
 --- !u!96 &96011499218716248
 TrailRenderer:
   serializedVersion: 2

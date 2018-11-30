@@ -5,7 +5,7 @@ public class PlayerController :MonoBehaviour {
 
     public static PlayerController instance;
 
-    public float dashMaxDistance, dashCooldown, ExtraSpeed;
+    public float dashMaxDistance, dashCooldown;
 
     public Animator animator;
 
@@ -28,11 +28,9 @@ public class PlayerController :MonoBehaviour {
 
     private Transform effectPos;
 
-
-
     private Vector2 dashDirection;
 
-    private float velo, dashInTime;
+    private float velo, dashInTime, ExtraSpeed;
 
     public bool WillCollide() {
         return true;
@@ -53,20 +51,27 @@ public class PlayerController :MonoBehaviour {
             Destroy(gameObject);
     }
 
+
+
     private void Awake() {
 
-        ExtraSpeed = 4f;
+        ExtraSpeed = gameObject.GetComponent<PlayerStats>().playerSpeed;
         dashCooldown = 0.7f;
         dashMaxDistance = 2;
         vec = new Vector2(0, 0);
         obstacleLayer = LayerMask.GetMask("Walls");
-        velo = (1 + ExtraSpeed / 10) * 300;
+        velo = (1 + ExtraSpeed / 10) * 200;
         playerRigidBody = GetComponent<Rigidbody2D>();
         playerSprite = GetComponent<SpriteRenderer>();
 
         ToInstance();
 
         Dash();
+    }
+
+    public void SetVelocity(float addSeed) {
+        ExtraSpeed += addSeed;
+        velo = (1 + ExtraSpeed / 10) * 200;
     }
 
     // Use this for initialization
