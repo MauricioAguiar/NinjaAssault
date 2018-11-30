@@ -205,11 +205,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1957ffc70c3400c498da860e471d4786, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 60
-  damageOverTime: 5
-  lifeStealAmount: 100
+  damage: 0
+  damageOverTime: 0
+  lifeStealAmount: 0
   timeDuration: 0
-  hasLifeSteal: 1
+  hasLifeSteal: 0
   layerToHit:
     serializedVersion: 2
     m_Bits: 512

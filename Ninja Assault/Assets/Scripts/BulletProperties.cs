@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 public class BulletProperties :MonoBehaviour {
-    private const int V = 8;
+
     private SpriteRenderer sprite;
 
    // private Color originalColor;
@@ -23,7 +23,7 @@ public class BulletProperties :MonoBehaviour {
         sprite = gameObject.GetComponent<SpriteRenderer>();
       //  originalColor = sprite.color;
         Physics2D.IgnoreLayerCollision(13, 9, false);
-        Physics2D.IgnoreLayerCollision(13, 10, false);
+        Physics2D.IgnoreLayerCollision(13, 10, true);
     }
 
 

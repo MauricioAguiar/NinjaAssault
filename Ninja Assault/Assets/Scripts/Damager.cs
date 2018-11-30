@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
@@ -28,9 +29,21 @@ public class Damager :MonoBehaviour {
         if (damagerFromPlayer){
             gameObjectWithDamageable = GameObject.FindGameObjectWithTag("Player");
             damageable = gameObjectWithDamageable.GetComponent<Damageable>();
+            SetValues();
            
         } else if (gameObject.GetComponent<Damageable>() != null)
             damageable = GetComponent<Damageable>();
+    }
+
+    private void SetValues() {
+       PlayerStats ps = gameObjectWithDamageable.GetComponent<PlayerStats>();
+
+        hasLifeSteal = ps.hasLifeSteal;
+        lifeStealAmount = ps.lifeStealAmount;
+        damage = ps.damage;
+        damageOverTime = ps.damageOverTime;
+        timeDuration = ps.timeDuration;
+        damagerFromPlayer = true;
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {

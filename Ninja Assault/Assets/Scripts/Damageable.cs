@@ -16,6 +16,8 @@ public class Damageable :MonoBehaviour {
 
     public Slider healthBar;
 
+    private PlayerStats playerStats;
+
     private float damageOverTime;
 
     private int timeDmgOverTime;
@@ -26,6 +28,18 @@ public class Damageable :MonoBehaviour {
         isInvunerable = false;
         health = maxHealth;
         healthBar.value = CalculateHealth();
+
+        if (isPlayer) {
+            playerStats = gameObject.GetComponent<PlayerStats>();
+            SetStatus();
+        }
+
+    }
+
+    public void SetStatus() {
+        playerStats.health = health;
+        playerStats.maxHealth = maxHealth;
+        playerStats.percentAdded = percentAdded;
     }
 
     private float CalculateHealth() {
