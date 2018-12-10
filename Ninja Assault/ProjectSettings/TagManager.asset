@@ -11,6 +11,7 @@ TagManager:
   - Weapon
   - Projectil
   - PlayerEffect
+  - Spawnpoint
   layers:
   - Default
   - TransparentFX

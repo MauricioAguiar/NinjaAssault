@@ -32,9 +32,15 @@ public class PlayerStats : MonoBehaviour {
     void Start () {
         ToInstance();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    // Update is called once per frame
+    private void FixedUpdate() {
+        SetValues();
+    }
+
+
+    void SetValues() {
+        health = gameObject.GetComponent<Damageable>().health;
+        maxHealth = gameObject.GetComponent<Damageable>().maxHealth;
+    }
 }
