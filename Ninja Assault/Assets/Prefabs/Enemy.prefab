@@ -239,7 +239,7 @@ MonoBehaviour:
   layerToHit:
     serializedVersion: 2
     m_Bits: 1024
-  gameObjectWithDamageable: {fileID: 1291375883412444}
+  damagerFromPlayer: 0
 --- !u!114 &114398687208153994
 MonoBehaviour:
   m_ObjectHideFlags: 1

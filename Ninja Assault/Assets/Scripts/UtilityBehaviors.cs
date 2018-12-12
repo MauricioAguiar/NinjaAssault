@@ -4,9 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class UtilityBehaviors : MonoBehaviour {
-
-	void Update () {//reload scene, for testing purposes
-		if (Input.GetKeyDown("r")){
+	void Update () {
+		if (Input.GetKeyDown("r")){//reload scene, for testing purposes
 			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 		}
 	}
