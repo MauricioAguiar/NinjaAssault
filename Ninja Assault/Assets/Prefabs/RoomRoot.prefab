@@ -86,6 +86,8 @@ MonoBehaviour:
     prefab: {fileID: 1928625776461176, guid: fd809aee08774554d98ea9d3428755fb, type: 2}
   - color: {r: 0, g: 0.5019608, b: 1, a: 1}
     prefab: {fileID: 1132586047390324, guid: d19f5808b3e53ac40b15db7587807cbc, type: 2}
+  - color: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
+    prefab: {fileID: 1272636776191414, guid: 9a228aa2193c5cf4fb8719800d6606d2, type: 2}
 --- !u!212 &212522987513716332
 SpriteRenderer:
   m_ObjectHideFlags: 1

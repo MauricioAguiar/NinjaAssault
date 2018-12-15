@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour {
 
-    public float damage, damageOverTime, lifeStealAmount, health, maxHealth, percentAdded, playerSpeed;
+    public List<GameObject> PowerUps;
+
+    public float damage, damageOverTime, lifeStealAmount, health, maxHealth, percentAdded, playerSpeed, ExtraSpeed;
 
     public int timeDuration;
 
@@ -31,11 +33,13 @@ public class PlayerStats : MonoBehaviour {
     // Use this for initialization
     void Start () {
         ToInstance();
-	}
+        playerSpeed = (1 + ExtraSpeed / 10) * 6400;
+    }
 
     // Update is called once per frame
     private void FixedUpdate() {
         SetValues();
+        playerSpeed = (1 + ExtraSpeed / 10) * 6400;
     }
 
 

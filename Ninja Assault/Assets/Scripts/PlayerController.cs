@@ -54,13 +54,10 @@ public class PlayerController :MonoBehaviour {
 
 
     private void Awake() {
-
-        ExtraSpeed = gameObject.GetComponent<PlayerStats>().playerSpeed;
         dashCooldown = 0.7f;
         dashMaxDistance = 2;
         vec = new Vector2(0, 0);
         obstacleLayer = LayerMask.GetMask("Walls");
-        velo = (1 + ExtraSpeed / 10) * 200;
         playerRigidBody = GetComponent<Rigidbody2D>();
         playerSprite = GetComponent<SpriteRenderer>();
 
@@ -68,15 +65,9 @@ public class PlayerController :MonoBehaviour {
 
         Dash();
     }
-
-    public void SetVelocity(float addSeed) {
-        ExtraSpeed += addSeed;
-        velo = (1 + ExtraSpeed / 10) * 200;
-    }
-
     // Use this for initialization
     void Start() {
-        effectPos = GameObject.FindGameObjectWithTag("PlayerEffect").GetComponent<Transform>();
+       effectPos = GameObject.FindGameObjectWithTag("PlayerEffect").GetComponent<Transform>();
     }
 
     // Update is called once per frame
@@ -98,7 +89,7 @@ public class PlayerController :MonoBehaviour {
 
         vec = new Vector2(x, y);
 
-        playerRigidBody.velocity = (vec * Time.deltaTime * velo);
+        playerRigidBody.velocity = (vec * Time.deltaTime * PlayerStats.instance.playerSpeed);
 
         if (vec.magnitude != 0) {
 
@@ -138,7 +129,7 @@ public class PlayerController :MonoBehaviour {
 
                 effectPos.position = playerSprite.transform.position;
 
-                playerRigidBody.velocity = (dashDirection * (dashPrecise * dashMaxDistance * 50));
+                playerRigidBody.velocity = (dashDirection * (dashPrecise * dashMaxDistance * 1600));
 
                 dashInTime = dashCooldown;
                 playerSprite.color = new Color(1f, 1f, 1f, 0f);

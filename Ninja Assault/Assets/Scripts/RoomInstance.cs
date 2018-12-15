@@ -10,7 +10,7 @@ public class RoomInstance : MonoBehaviour {
 	[HideInInspector]
 	public bool doorTop, doorBot, doorLeft, doorRight;
 	[SerializeField]
-	GameObject doorU, doorD, doorL, doorR, doorWallU, doorWallD, doorWallL, doorWallR;
+	public GameObject doorU, doorD, doorL, doorR, doorWallU, doorWallD, doorWallL, doorWallR;
 
 	[SerializeField]
 	ColorToGameObject[] mappings;

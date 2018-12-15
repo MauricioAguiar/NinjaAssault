@@ -9,77 +9,88 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1975706786332780}
+  m_RootGameObject: {fileID: 1597993180482606}
   m_IsPrefabAsset: 1
---- !u!1 &1975706786332780
+--- !u!1 &1597993180482606
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4330888368854240}
-  - component: {fileID: 212393331841987928}
-  - component: {fileID: 114693593216518782}
-  m_Layer: 14
-  m_Name: MapSprite
+  - component: {fileID: 4089818570939930}
+  - component: {fileID: 212514690628636748}
+  - component: {fileID: 58420366818938888}
+  - component: {fileID: 114055993875301900}
+  m_Layer: 0
+  m_Name: Vampire Fangs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4330888368854240
+--- !u!4 &4089818570939930
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1975706786332780}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 1597993180482606}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -94.7, y: 34.1, z: -19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114693593216518782
+--- !u!58 &58420366818938888
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1597993180482606}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 16
+--- !u!114 &114055993875301900
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1975706786332780}
+  m_GameObject: {fileID: 1597993180482606}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1e0fb6307cbcc743b90b347d37d1a8e, type: 3}
+  m_Script: {fileID: 11500000, guid: 89ed421dd53feaa42a2ee9421daa000f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spU: {fileID: 21300000, guid: c7819f663fd32ea4a909fc558a782366, type: 3}
-  spD: {fileID: 21300000, guid: 2d5cef4f1c136714bac69db478275e54, type: 3}
-  spR: {fileID: 21300000, guid: 7dd9ed293c5769042a3cc3ccf914b72e, type: 3}
-  spL: {fileID: 21300000, guid: 1be95bf45af18c947af88845614c3935, type: 3}
-  spUD: {fileID: 21300000, guid: 726d4adc2c35adf49a696520e3bb3c01, type: 3}
-  spRL: {fileID: 21300000, guid: 6c4b0dcd7fe99814f827564a16e8d269, type: 3}
-  spUR: {fileID: 21300000, guid: db48da81c2a4b704aa94a0c563bbbd43, type: 3}
-  spUL: {fileID: 21300000, guid: 17ffd6230c49db44cb783fb1ff7ea752, type: 3}
-  spDR: {fileID: 21300000, guid: 0a6570fa33f9b3e4b9893b960ada287f, type: 3}
-  spDL: {fileID: 21300000, guid: 8edf18727d42f7946bda92f95f8ab8a9, type: 3}
-  spULD: {fileID: 21300000, guid: 98b4fa921cfec394da8adbbe80a534dd, type: 3}
-  spRUL: {fileID: 21300000, guid: 76c98fed3144d94458de2ad9eadc04e9, type: 3}
-  spDRU: {fileID: 21300000, guid: 4e19e0d3b88063b46ad8574093fe3e66, type: 3}
-  spLDR: {fileID: 21300000, guid: b3403c31138e49a4f82c695d69220e47, type: 3}
-  spUDRL: {fileID: 21300000, guid: f8bd375a6a3f70442a9144d0e96fda57, type: 3}
-  up: 0
-  down: 0
-  left: 0
-  right: 0
-  type: 0
-  normalColor: {r: 1, g: 1, b: 1, a: 1}
-  enterColor: {r: 0.09764275, g: 0.63235295, b: 0.10133038, a: 1}
---- !u!212 &212393331841987928
+  EspecialEffect: {fileID: 0}
+  itemName: Vampire Fangs
+  itemDescription: How a vampire teeth dropped here? But the most import thing is
+    how a vampire fangs does to give you life when you hit a enemy? Well this is just
+    a "once upon a time" tale does not need to make that much sense
+  addHealth: 0
+  addHealthPercent: 0
+  addDamage: 0
+  addDamagePercent: 0
+  addDamageOverTime: 0
+  addSpeed: 0
+  addDmgOverTimeDuration: 0
+  addPoison: 0
+  addLifeStealAmount: 10
+  addLifeSteal: 1
+  hasDamageOverTime: 0
+  rarity: 3
+--- !u!212 &212514690628636748
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1975706786332780}
+  m_GameObject: {fileID: 1597993180482606}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -109,12 +120,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f8bd375a6a3f70442a9144d0e96fda57, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b3e16861021cb3b41a064cc15cbdc388, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.16, y: 0.08}
+  m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
