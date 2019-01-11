@@ -6,7 +6,7 @@ public class GhostEffect : MonoBehaviour {
 
     public SpriteRenderer sprite;
 
-    float timer = 0.5f;
+    public float timer = 0.5f;
 
     public Color ghostColor;
 

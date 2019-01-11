@@ -33,13 +33,14 @@ public class PlayerStats : MonoBehaviour {
     // Use this for initialization
     void Start () {
         ToInstance();
-        playerSpeed = (1 + ExtraSpeed / 10) * 6400;
+        ExtraSpeed = 200;
+        playerSpeed = (1 + ExtraSpeed / 10) * 150;
     }
 
     // Update is called once per frame
     private void FixedUpdate() {
         SetValues();
-        playerSpeed = (1 + ExtraSpeed / 10) * 6400;
+        playerSpeed = (1 + ExtraSpeed / 10) * 150;
     }
 
 

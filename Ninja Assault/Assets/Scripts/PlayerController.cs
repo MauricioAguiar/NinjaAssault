@@ -3,15 +3,17 @@ using System.Collections;
 
 public class PlayerController :MonoBehaviour {
 
+   
+
     public static PlayerController instance;
 
-    public float dashMaxDistance, dashCooldown;
+    public float dashMaxDistance, dashCooldown, dashAjustment;
 
     public Animator animator;
 
     public Animator effectAnimator;
 
-    public GameObject crossHair, weapon;
+    public GameObject crossHair, weapon, ghostEffect;
 
     public SpriteRenderer playerSprite;
 
@@ -26,7 +28,7 @@ public class PlayerController :MonoBehaviour {
     private Vector2 vec;
     [SerializeField]
 
-    private Transform effectPos;
+    private GameObject effectPos;
 
     private Vector2 dashDirection;
 
@@ -54,8 +56,9 @@ public class PlayerController :MonoBehaviour {
 
 
     private void Awake() {
+        dashAjustment = 30;
         dashCooldown = 0.7f;
-        dashMaxDistance = 2;
+        dashMaxDistance = 2f;
         vec = new Vector2(0, 0);
         obstacleLayer = LayerMask.GetMask("Walls");
         playerRigidBody = GetComponent<Rigidbody2D>();
@@ -67,7 +70,8 @@ public class PlayerController :MonoBehaviour {
     }
     // Use this for initialization
     void Start() {
-       effectPos = GameObject.FindGameObjectWithTag("PlayerEffect").GetComponent<Transform>();
+        //effectPos = GameObject.FindGameObjectWithTag("PlayerEffect");
+        //effectAnimator = effectPos.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -121,21 +125,23 @@ public class PlayerController :MonoBehaviour {
         if (Input.GetButtonDown("Dash")) {
 
             if (hit) {
-
+                Debug.Log("Bateu na parede");
                 dashPrecise = hit.fraction;
+                Instantiate(ghostEffect, transform.position, transform.rotation);
             }
 
-            if (dashInTime <= 0) {                
+            if (dashInTime <= 0) {
+                Debug.Log("Dash Livre");
+                //effectPos.transform.position = playerSprite.transform.position;
 
-                effectPos.position = playerSprite.transform.position;
-
-                playerRigidBody.velocity = (dashDirection * (dashPrecise * dashMaxDistance * 1600));
+                playerRigidBody.velocity = (dashDirection * (dashPrecise * dashMaxDistance* dashAjustment));
 
                 dashInTime = dashCooldown;
-                playerSprite.color = new Color(1f, 1f, 1f, 0f);
-                effectAnimator.SetBool("isDashing", true);
+                playerSprite.color = new Color(1f, 1f, 1f, 0.8f);
+                //effectAnimator.SetBool("isDashing", true);
                 Physics2D.IgnoreLayerCollision(13, 9, true);
-                StartCoroutine(InvisibleEffect(0.6f));
+                Instantiate(ghostEffect, transform.position, transform.rotation);
+                //StartCoroutine(InvisibleEffect(0.6f));
             }
 
         } else {

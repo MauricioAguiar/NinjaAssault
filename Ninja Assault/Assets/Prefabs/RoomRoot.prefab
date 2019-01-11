@@ -59,9 +59,9 @@ MonoBehaviour:
   doorBot: 0
   doorLeft: 0
   doorRight: 0
-  doorU: {fileID: 1152370622949468, guid: 71ef14862abca91428027002fc9c0b20, type: 2}
-  doorD: {fileID: 1152370622949468, guid: 71ef14862abca91428027002fc9c0b20, type: 2}
-  doorL: {fileID: 1152370622949468, guid: 71ef14862abca91428027002fc9c0b20, type: 2}
+  doorU: {fileID: 1415040901696438, guid: af7c60c49cfab0c4798a79c4545f45d5, type: 2}
+  doorD: {fileID: 1872749682162676, guid: 0930ae58da8d5ad44a6cd72a40cb38fc, type: 2}
+  doorL: {fileID: 1853618083580724, guid: eee9725623c344141a7b4d6e542eefe6, type: 2}
   doorR: {fileID: 1152370622949468, guid: 71ef14862abca91428027002fc9c0b20, type: 2}
   doorWallU: {fileID: 1839069655480260, guid: 59071d450efe2d3429ba8ffe6d5e30ae, type: 2}
   doorWallD: {fileID: 1015523679689644, guid: ec18ddccb2dde984cab99ee2b0cbf385, type: 2}

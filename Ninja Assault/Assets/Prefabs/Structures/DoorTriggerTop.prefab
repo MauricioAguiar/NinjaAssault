@@ -9,58 +9,87 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1680169866770522}
+  m_RootGameObject: {fileID: 1415040901696438}
   m_IsPrefabAsset: 1
---- !u!1 &1680169866770522
+--- !u!1 &1415040901696438
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4241338104534024}
-  - component: {fileID: 212280223312656934}
-  - component: {fileID: 114822207805831736}
+  - component: {fileID: 4846262278320888}
+  - component: {fileID: 212164148140406546}
+  - component: {fileID: 61234436955779704}
+  - component: {fileID: 114510207187453468}
   m_Layer: 0
-  m_Name: PlayerGhost
+  m_Name: DoorTriggerTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4241338104534024
+--- !u!4 &4846262278320888
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1680169866770522}
+  m_GameObject: {fileID: 1415040901696438}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.83, y: 0.01, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114822207805831736
+--- !u!61 &61234436955779704
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1415040901696438}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 16, y: 16}
+    newSize: {x: 16, y: 16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 16, y: 16}
+  m_EdgeRadius: 0
+--- !u!114 &114510207187453468
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1680169866770522}
+  m_GameObject: {fileID: 1415040901696438}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2f0313bd76f1fe40ad0b98d9884494b, type: 3}
+  m_Script: {fileID: 11500000, guid: f61b2ade0fef41940a75d4ca7ede1660, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
-  timer: 2.01
-  ghostColor: {r: 1, g: 0, b: 0, a: 0}
---- !u!212 &212280223312656934
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  doorDirection: 2
+  nextDoorDistance: 100
+  color: {r: 1, g: 0, b: 0, a: 0.49803922}
+--- !u!212 &212164148140406546
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1680169866770522}
+  m_GameObject: {fileID: 1415040901696438}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -89,13 +118,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: b76263f094743b842a3564205377b99e, type: 3}
-  m_Color: {r: 0.59607846, g: 0.56301624, b: 0.13333333, a: 0.7058824}
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 168c33633e1ae8544a40cddf7c9dd117, type: 3}
+  m_Color: {r: 1, g: 0, b: 0.039559364, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 16, y: 16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

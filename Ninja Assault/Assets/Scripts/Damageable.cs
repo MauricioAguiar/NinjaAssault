@@ -14,7 +14,7 @@ public class Damageable :MonoBehaviour {
 
     public bool canDie, isPlayer;
 
-   // public Slider healthBar;
+    public Slider healthBar;
 
     private PlayerStats playerStats;
 
@@ -27,7 +27,7 @@ public class Damageable :MonoBehaviour {
     private void Start() {
         isInvunerable = false;
         health = maxHealth;
-       // healthBar.value = CalculateHealth();
+        //healthBar.value = CalculateHealth();
 
         if (isPlayer) {
             playerStats = gameObject.GetComponent<PlayerStats>();
@@ -57,7 +57,7 @@ public class Damageable :MonoBehaviour {
 
             health -= dmg;
             OnRecieveDamage();
-          //  healthBar.value = CalculateHealth();
+            healthBar.value = CalculateHealth();
             
             isInvunerable = true;
             StartCoroutine(GainInvunerability(invunerableTime));
