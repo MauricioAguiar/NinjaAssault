@@ -24,6 +24,7 @@ public class BulletProperties :MonoBehaviour {
       //  originalColor = sprite.color;
         Physics2D.IgnoreLayerCollision(13, 9, false);
         Physics2D.IgnoreLayerCollision(13, 10, true);
+
     }
 
 

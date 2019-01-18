@@ -6,7 +6,7 @@ public class NextDoor : MonoBehaviour {
 
     public enum Direction {Left,Right,Top,Bot};
 
-    public LayerMask obstacleLayer;
+    //public LayerMask obstacleLayer;
 
     public Direction doorDirection;
 
@@ -34,7 +34,7 @@ public class NextDoor : MonoBehaviour {
         Vector2 vec = new Vector2(0, 0);
         Vector2 aux = transform.position;
 
-        if (doorDirection == Direction.Left) {
+        if (doorDirection == Direction.Left) { //Setting Values according to the character's door enter
 
             vec = new Vector2(aux.x - nextDoorDistance, aux.y);
             crm.MovCam(-1,0);
@@ -64,8 +64,6 @@ public class NextDoor : MonoBehaviour {
 
         if (collision.CompareTag("Player")) {
             PlayerController.instance.transform.position = DirectionDoor();
-
-            Debug.Log("Tocou aqui hein");
         }
     }
 

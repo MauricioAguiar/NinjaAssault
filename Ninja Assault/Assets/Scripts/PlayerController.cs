@@ -9,9 +9,7 @@ public class PlayerController :MonoBehaviour {
 
     public float dashMaxDistance, dashCooldown, dashAjustment;
 
-    public Animator animator;
-
-    public Animator effectAnimator;
+    public Animator animator, effectAnimator;
 
     public GameObject crossHair, weapon, ghostEffect;
 
@@ -52,8 +50,6 @@ public class PlayerController :MonoBehaviour {
             //Then destroy this. This enforces our singleton pattern, meaning there can only ever be one instance of a GameManager.
             Destroy(gameObject);
     }
-
-
 
     private void Awake() {
         dashAjustment = 30;
@@ -187,7 +183,7 @@ public class PlayerController :MonoBehaviour {
 
                 GameObject bullet = Instantiate(weapon, transform.position, Quaternion.identity);
 
-                bullet.GetComponent<Rigidbody2D>().velocity = shootingDirection * 10;
+                bullet.GetComponent<Rigidbody2D>().velocity = shootingDirection * 500;
                 bullet.transform.Rotate(0.0f, 0.0f, Mathf.Atan2(shootingDirection.y, shootingDirection.x) * Mathf.Rad2Deg);
 
                 Destroy(bullet, 5);

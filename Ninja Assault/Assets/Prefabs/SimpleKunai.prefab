@@ -38,7 +38,6 @@ GameObject:
   - component: {fileID: 212486383537250460}
   - component: {fileID: 50968342825959766}
   - component: {fileID: 61754790514740210}
-  - component: {fileID: 114936970080708594}
   - component: {fileID: 114895882211552744}
   m_Layer: 0
   m_Name: SimpleKunai
@@ -110,7 +109,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.0633757, y: 0.50325835}
-    oldSize: {x: 0.32, y: 0.32}
+    oldSize: {x: 10.666667, y: 10.666667}
     newSize: {x: 0.32, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -224,25 +223,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 30
   damageOverTime: 3
+  lifeStealAmount: 0
   timeDuration: 10
+  hasLifeSteal: 0
   layerToHit:
     serializedVersion: 2
     m_Bits: 512
---- !u!114 &114936970080708594
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1723527216578994}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2bf7ba4e727d3144867ec4e32bcff84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  obstacleLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  c: {r: 0, g: 0, b: 0, a: 0}
+  damagerFromPlayer: 0
 --- !u!212 &212486383537250460
 SpriteRenderer:
   m_ObjectHideFlags: 1
